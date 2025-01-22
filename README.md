@@ -11,6 +11,8 @@ Office hours: by appointment
 ## Log and announcements 
 > [!IMPORTANT]
 > **Problem Set 3** is available. It is due on **22.01.2025, 11:59 PM**. 
++ 17/01: Endogenous Grid Method continued.
++ 15/01: Root-finding in Neoclassical Growth Model, intro to Endogenous Grid Method.
 + 10/01: Howard's policy iteration, optimistic policy iteration. 
 + 8/01: Theory of Markov Decision Processes.
 + 20/12: Introduction to Markov Chains.
