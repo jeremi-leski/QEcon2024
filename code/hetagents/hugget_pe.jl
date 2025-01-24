@@ -5,8 +5,9 @@ using Distributions, QuantEcon, IterTools, Optim, Interpolations, LinearAlgebra,
 
 
 @with_kw struct HAProblem
+
     ρ_z=0.96 # log of productivity persistence
-    ν_z=sqrt(0.125) # log of productivity volatility
+    ν_z=sqrt(0.125) # volatility log of productivity 
     γ = 2 # curvature parameter of utility function
     u = γ == 1 ? x -> log(x) : x -> (x^(1 - γ) - 1) / (1 - γ) # utility function
     ϕ = 0.0 # borrowing constraint
@@ -56,7 +57,7 @@ function T_operator(v,model,prices)
 
     @unpack  N_z, z_vec, P_z, β, a_vec, N_a, u = model
     @unpack  r, w  = prices
-    v_new   = zeros(Float64, N_a,N_z)
+    v_new   = zeros(Float64,N_a,N_z)
     σ       = zeros(Float64,N_a,N_z)
     σ_ind   = ones(Int,N_a,N_z)
 
@@ -115,15 +116,15 @@ lines_scheme = [get(ColorSchemes.thermal,LinRange(0.2,0.8,model.N_z));];
 policy_plot = plot(xlabel = "a", ylabel = "a′", title = "Policy function");
 
 for j in 1:model.N_z
-    plot!(policy_plot,model.a_vec[:], σ_opi[:,j], label = false, color = lines_scheme[j], lw=3)
+    plot!(policy_plot,model.a_vec[1:75], σ_opi[1:75,j], label = false, color = lines_scheme[j], lw=3)
 end
 
-plot!(policy_plot,model.a_vec[:], model.a_vec[:], label = false, linestyle = :dash, color = :black)
+plot!(policy_plot,model.a_vec[1:75], model.a_vec[1:75], label = false, linestyle = :dash, color = :black)
 
 
 value_plot = plot(xlabel = "a", ylabel = "V", title = "Value function");
 for j in 1:model.N_z
-    plot!(value_plot,model.a_vec[:], v_opi[:,j], label = false, color = lines_scheme[j], lw=3)
+    plot!(value_plot,model.a_vec[1:75], v_opi[1:75,j], label = false, color = lines_scheme[j], lw=3)
 end
 
 
