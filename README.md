@@ -10,7 +10,9 @@ Office hours: by appointment
 
 ## Log and announcements 
 > [!IMPORTANT]
-> **Problem Set 3** is available. It is due on **22.01.2025, 11:59 PM**. 
+> **FINAL PROJECT** is available. It is due on **28.02.2025, 11:59 PM**. 
++ 24/01: General equilibrium in HA model. 
++ 22/01: Models with incomplete asset markets, finding stationary distribution.
 + 17/01: Endogenous Grid Method continued.
 + 15/01: Root-finding in Neoclassical Growth Model, intro to Endogenous Grid Method.
 + 10/01: Howard's policy iteration, optimistic policy iteration. 
